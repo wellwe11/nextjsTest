@@ -1,0 +1,41 @@
+{
+  "one": {
+    "index": 1,
+    "text": {
+      "title": "bioTitle",
+      "info": "info",
+      "bio": "longText"
+    },
+    "images": [
+      "./resources/imageOne.avif",
+      "./resources/imageTwo.avif",
+      "./resources/imageFour.avif"
+    ]
+  },
+  "two": {
+    "index": 2,
+    "text": {
+      "title": "bioTitle",
+      "info": "info",
+      "bio": "longText"
+    },
+    "images": [
+      "./resources/imageTwo.avif",
+      "./resources/imageFour.avif",
+      "./resources/imageOne.avif"
+    ]
+  },
+  "three": {
+    "index": 3,
+    "text": {
+      "title": "bioTitle",
+      "info": "info",
+      "bio": "longText"
+    },
+    "images": [
+      "./resources/imageOne.avif",
+      "./resources/imageFour.avif",
+      "./resources/imageTwo.avif"
+    ]
+  }
+}
