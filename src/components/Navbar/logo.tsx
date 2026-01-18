@@ -1,6 +1,6 @@
 "use client";
 
-import useNavigator from "./hooks/useNavigator";
+import useNavigator from "../../hooks/useNavigator";
 
 const Logo = () => {
   const handleNavigate = useNavigator("/");
