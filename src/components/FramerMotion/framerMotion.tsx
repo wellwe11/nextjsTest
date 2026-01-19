@@ -1,11 +1,15 @@
+"use client";
+
 import { useRef } from "react";
 import { motion } from "framer-motion";
 
+import Image from "next/image";
+
 import styles from "./framerMotion.module.scss";
 
-import useInView from "../../hooks/useInView.ts";
-import useSpringScroll from "./hooks/useSpringScroll.ts";
-import type { HomeSection } from "src/router.tsx";
+import useInView from "@/hooks/useInView";
+import useSpringScroll from "./hooks/useSpringScroll";
+import type { HomeSection } from "@/app/page";
 
 const BioContainer = ({ bioTitle, bio }: { bioTitle: string; bio: string }) => {
   return (
@@ -55,7 +59,7 @@ const FramerMotion = ({
     },
   ];
 
-  const intersectingStyle: Object = {
+  const intersectingStyle: object = {
     opacity: isIntersecting ? "1" : "0",
     visibility: isIntersecting ? "visible" : "hidden",
     transition: isIntersecting
@@ -63,6 +67,8 @@ const FramerMotion = ({
       : "opacity 0.2s ease, visibility 0.2s cubic-bezier(0.7, 0, 0.84, 0)",
     transform: "translateX(0)",
   };
+
+  if (images.length === 0) return;
 
   return (
     <div className={styles.framerMotion} ref={containerRef}>
@@ -72,13 +78,7 @@ const FramerMotion = ({
           style={{ y }}
           className={styles.imageContainer}
         >
-          <img
-            className={styles.image}
-            src={src}
-            alt="image"
-            loading="eager"
-            decoding="async"
-          />
+          {src && <Image className={styles.image} src={src} alt="image" fill />}
         </motion.div>
       ))}
       <div

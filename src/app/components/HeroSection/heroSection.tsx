@@ -1,21 +1,14 @@
-import { useNavigate } from "react-router-dom";
+import Image from "next/image";
+
 import heroImage from "../../resources/imageThree.avif";
+import Button from "./exploreButton";
 
 const HeroSection = () => {
-  const navigate = useNavigate();
-  const handleNavigate = () => {
-    navigate("/gallery");
-  };
   return (
     <div className="w-full h-screen z-30 sticky grid place-items-center overflow-hidden grid-cols-1 grid-rows-1">
-      <button
-        onClick={handleNavigate}
-        className="col-start-1 row-start-1 z-10 bg-gray-300 w-35 h-15 cursor-pointer m-auto"
-      >
-        Explore
-      </button>
+      <Button />
 
-      <img
+      <Image
         className="h-full w-full object-center object-cover col-start-1 row-start-1"
         src={heroImage}
         alt=""

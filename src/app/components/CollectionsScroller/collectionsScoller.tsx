@@ -2,9 +2,9 @@
 import React, { useRef } from "react";
 
 import { HomeSection } from "@/app/page.js";
-import FramerMotionContainer from "@//components/FramerMotion/framerMotion.js";
-import useFoundInView from "@/app/hooks/useFoundInView.js";
-import { useInView } from "framer-motion";
+import FramerMotionContainer from "@/components/FramerMotion/framerMotion";
+import useFoundInView from "@/app/hooks/useFoundInView";
+import useInView from "@/hooks/useInView";
 
 // number on right side which displays currently showing collection (1/2/3...)
 const CollectionNumberCounter = ({
@@ -12,14 +12,8 @@ const CollectionNumberCounter = ({
 }: {
   intersectingRefs: React.RefObject<(HTMLDivElement | null)[]>;
 }) => {
-  if (!intersectingRefs) {
-    return;
-  }
-
   const containerRef = useRef(null);
-
   const { intersectingEl } = useFoundInView(intersectingRefs);
-
   const { isIntersecting } = useInView(containerRef, {
     threshold: 0.1,
   });
