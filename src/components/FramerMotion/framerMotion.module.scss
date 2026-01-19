@@ -1,0 +1,132 @@
+.container {
+  height: 100vh;
+  width: 99vw;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: relative;
+
+  pointer-events: none; // change in future if i chosoe to change the interactivety
+}
+
+.framerMotion {
+  width: 50%;
+  min-width: 800px;
+  height: 70%;
+  min-height: 600px;
+
+  display: grid;
+  grid-template-columns: 20% 35% 25% 20%;
+  grid-template-rows: 55% 35% 10%;
+  gap: 0.5rem;
+
+  .imageContainer {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+    .image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    &:nth-of-type(1) {
+      grid-column: 2;
+      grid-row: 1 / span 2;
+      justify-self: end;
+      width: 100%;
+      height: 100%;
+    }
+
+    &:nth-of-type(2) {
+      grid-column: 3;
+      grid-row: 1;
+      width: 100%;
+      align-self: end;
+
+      z-index: 3;
+    }
+
+    &:nth-of-type(3) {
+      grid-column: 3;
+      grid-row: 2;
+      width: 100%;
+      align-self: start;
+
+      z-index: 2;
+    }
+  }
+
+  .gridTextClass {
+    z-index: 10;
+    height: 300vw;
+    align-self: center;
+    position: relative;
+  }
+
+  .leftContainer {
+    grid-column: 1;
+    grid-row: 1 / 3;
+  }
+
+  .rightContainer {
+    grid-column: 4;
+    grid-row: 1;
+  }
+
+  .belowContainer {
+    grid-row: 3;
+    grid-column: 2 / 4;
+  }
+}
+
+.typeContainer {
+  position: sticky;
+  top: 12.5%;
+
+  .title {
+    font-size: 60px;
+  }
+}
+
+.bioContainer {
+  height: 100%;
+  width: 100%;
+
+  position: relative;
+  .fixedContainer {
+    position: sticky;
+
+    top: 30%;
+
+    text-align: end;
+
+    .bioTitle {
+      font-variation-settings: "wght" 500;
+      font-size: 13px;
+    }
+
+    .bio {
+      font-variation-settings: "wght" 250;
+      font-size: 12px;
+    }
+  }
+}
+
+.longTextContainer {
+  position: sticky;
+
+  top: 79%;
+
+  display: flex;
+  align-items: center;
+
+  .text {
+    font-variation-settings: "wght" 350;
+    font-size: 12px;
+  }
+}
